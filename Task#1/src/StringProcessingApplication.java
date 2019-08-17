@@ -47,7 +47,6 @@ public class StringProcessingApplication {
                     printWordWithOnlyUniqChar();
                     break;
                 case 6:
-
                     break;
             }
         }
