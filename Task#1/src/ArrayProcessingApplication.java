@@ -24,26 +24,27 @@ public class ArrayProcessingApplication {
         printAllItemFromArray();
         while (true){
             switch (getTaskNumber()){
-                case 0: System.exit(0);
-                case 1:
+                case 0:
+                    System.exit(0);
+                case 1:                                                    // 1 Подпункт 1 задания
                     swapMaxNegativeNumWithMinPositiveNum();
                     printAllItemFromArray();
                     break;
-                case 2:
+                case 2:                                                    // 2 Подпункт 1 задания
                     printSumOfEvenItems();
                     break;
-                case 3:
+                case 3:                                                    // 3 Подпункт 1 задания
                     replaceNegativeNumWithZero();
                     printAllItemFromArray();
                     break;
-                case 4:
+                case 4:                                                    // 4 Подпункт 1 задания
                     tripleAllPositiveNumsBeforeNegative();
                     printAllItemFromArray();
                     break;
-                case 5:
+                case 5:                                                    // 5 Подпункт 1 задания
                     printDifferenceBetweenAverageAndMinNum();
                     break;
-                case 6:
+                case 6:                                                    // 6 Подпункт 1 задания
                     printRepeatedOddNum();
                     break;
             }

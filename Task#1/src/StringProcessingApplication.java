@@ -21,41 +21,32 @@ public class StringProcessingApplication {
     public void run(){
         int numberOfStrings = getNumberOfString();
         stringArray = new String[numberOfStrings];
+
+        setLines(numberOfStrings);
         while (true){
             switch (getTaskNumber()){
                 case 0:
                     System.exit(0);
                 case 1:                                           // 1 подпункт 2 задания
-                    setLines(numberOfStrings);
                     printShortestLine();
                     printLongestLine();
                     break;
                 case 2:                                           // 2 подпункт 2 задания
-                    setLines(numberOfStrings);
                     printLinesLongerThan(getAverageLength());
                     break;
                 case 3:                                           // 3 подпункт 2 задания
-                    setLines(numberOfStrings);
                     printLinesShorterThan(getAverageLength());
                     break;
                 case 4:                                           // 4 подпункт 2 задания
-                    setLines(numberOfStrings);
-                    printWordWithMinUniqChar();
+                    System.out.println(getWordWithMinUniqChar());
                     break;
                 case 5:                                           // 5 подпункт 2 задания
-                    setLines(numberOfStrings);
-                    printWordWithOnlyUniqChar();
+                    System.out.println(getWordWithOnlyUniqChar());
                     break;
-                case 6:
+                case 6:                                           // 6 подпункт 2 задания
+                    System.out.println(getWordWithOnlyDigits());
                     break;
             }
-        }
-    }
-
-    private void getAllLines(){
-        for (String line: stringArray
-             ) {
-            System.out.println(line);
         }
     }
 
@@ -104,10 +95,6 @@ public class StringProcessingApplication {
             }
 
         }
-    }
-
-    private void setWords(int numberOfStrings){
-
     }
 
     private void printShortestLine(){
@@ -168,14 +155,14 @@ public class StringProcessingApplication {
         }
     }
 
-    private void printWordWithMinUniqChar(){
-        int minNumUniqChar = Integer.MAX_VALUE;
-        String minUniqString = "";
+    private String getWordWithMinUniqChar(){
+        int minNumUniqChar = Integer.MAX_VALUE;                         // Минимальное количество различных символов
+        String minUniqString = "";                                      // Строка с минимальным вхождением различных символов
 
         for (String line: stringArray
         ) {
-            char[] word = line.toCharArray();
-            int uniqChar = 1;
+            char[] word = line.toCharArray();                           // Массив символов слова
+            int uniqChar = 1;                                           // Количество уникальных символов
 
             for (int index=1; index < word.length;index++){
                 for (int index_sec=0; index_sec<index;index_sec++){
@@ -191,32 +178,58 @@ public class StringProcessingApplication {
                 minUniqString=line;
             }
         }
-        System.out.println(minUniqString);
+        return minUniqString;
     }
 
-    private void printWordWithOnlyUniqChar(){
+    private String getWordWithOnlyUniqChar(){
         String uniqCharString = null;
 
         for (String line: stringArray
         ) {
             char[] word = line.toCharArray();
-            boolean flag = false;
+            boolean hasSameLetter = false;                            // Флаг, для обозначения, имеются ли одинаковые символы
 
             if (uniqCharString!=null) break;
             for (int index=1; index < word.length;index++){
                 for (int index_sec=0; index_sec<index;index_sec++){
                     if (word[index_sec]!=word[index]){
-                        flag=true;
+                        hasSameLetter=true;
                         break;
                     }
                 }
 
             }
-            if (flag) continue;
+            if (hasSameLetter) continue;
             uniqCharString = line;
         }
-        System.out.println(uniqCharString);
+        return uniqCharString;
     }
 
+    private String getWordWithOnlyDigits(){
+        int numberOnlyDigitsWord = 0;
+        String onlyDigitsWord = "Nothing";
+
+        /*
+         * Чтобы найти строки, в которых были использованы лишь цифры
+         * будем проверять промежуток между значениями ASCII кодов цифр от 0 (48) до 9 (57)
+         */
+        for (String line: stringArray
+        ) {
+            boolean hasLetter = false;                 // флаг, для обозначения, есть ли буква в слове
+            char[] word = line.toCharArray();
+
+            for (int index=0; index < word.length;index++){
+                if (word[index]<48 || word[index]>57){
+                    hasLetter=true;
+                    break;
+                }
+            }
+            if (!hasLetter && numberOnlyDigitsWord<2){
+                numberOnlyDigitsWord++;
+                onlyDigitsWord=line;
+            }
+        }
+        return onlyDigitsWord;
+    }
 
 }
