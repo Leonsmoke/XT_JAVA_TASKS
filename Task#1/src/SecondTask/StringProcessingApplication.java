@@ -1,3 +1,5 @@
+package SecondTask;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -77,9 +79,10 @@ public class StringProcessingApplication {
                 numberOfStrings=scanner.nextInt();
             }catch (InputMismatchException e){
                 System.err.println("Please enter a number.");
+                scanner.next();
                 numberOfStrings=-1;
             }
-        } while (numberOfStrings < MIN_NUMBER_OF_STRINGS && numberOfStrings > MAX_NUMBER_OF_STRINGS);
+        } while (numberOfStrings < MIN_NUMBER_OF_STRINGS || numberOfStrings > MAX_NUMBER_OF_STRINGS);
         return numberOfStrings;
     }
 
