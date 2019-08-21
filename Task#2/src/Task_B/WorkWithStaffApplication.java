@@ -14,10 +14,13 @@ public class WorkWithStaffApplication {
 
     public static void main(String[] args) {
         WorkWithStaffApplication app = new WorkWithStaffApplication();
+        app.run();
+    }
 
-        Employee[] employees = app.generateArray();
+    public void run(){
+        Employee[] employees = generateArray();
         Employee[][] employeesByGroup= SeparationService.separateArray(employees);
-        app.printAllElements(employeesByGroup);
+        printAllElements(employeesByGroup);
     }
 
     private Employee[] generateArray(){
