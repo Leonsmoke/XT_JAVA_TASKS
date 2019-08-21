@@ -3,10 +3,7 @@ package Task_B.Services;
 import Task_B.Models.Employee;
 
 import static Task_B.WorkWithStaffApplication.RANDOM_GENERATION_ARRAY_SIZE;
-/*
- * Melnikov Dmitrii
- * Practice 2 (Class and objects), Task B
- */
+
 public class SeparationService {
     static final String JANITOR_CLASSNAME = "Task_B.Models.Janitor";
     static final String ENGINEER_CLASSNAME = "Task_B.Models.Engineer";

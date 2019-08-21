@@ -4,6 +4,10 @@ import Task_B.Models.Employee;
 import Task_B.Services.EmployeeFactory;
 import Task_B.Services.SeparationService;
 
+/*
+ * Melnikov Dmitrii
+ * Practice 2 (Class and objects), Task_B
+ */
 public class WorkWithStaffApplication {
 
     public static final int RANDOM_GENERATION_ARRAY_SIZE = 10;             //Number of employees generated
