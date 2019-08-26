@@ -13,9 +13,9 @@ import static VeganChief.constants.Labels.*;
  * 3rd Practise Task 3
  */
 public class VeganChiefApplication {
-    private SaladStorageService storage = new SaladStorageService();
-    private SaladService saladService = new SaladService();
-    public static Scanner scanner = new Scanner(System.in);
+    private SaladStorageService storage = new SaladStorageService();   // Service for storage all salads
+    private SaladService saladService = new SaladService();            // Salads interaction service
+    public static Scanner scanner = new Scanner(System.in);            // Just scanner
 
     public static void main(String[] args) {
         VeganChiefApplication vca = new VeganChiefApplication();
