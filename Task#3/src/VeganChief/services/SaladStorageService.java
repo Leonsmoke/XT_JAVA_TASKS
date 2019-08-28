@@ -2,6 +2,10 @@ package VeganChief.services;
 
 import VeganChief.models.Salad;
 
+/**
+ * A service that allows you to conveniently store data about created salads.
+ * Add new and modify existing ones.
+ */
 public class SaladStorageService {
 
     private Salad[] salads;
