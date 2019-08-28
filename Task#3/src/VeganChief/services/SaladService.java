@@ -8,8 +8,10 @@ import java.util.InputMismatchException;
 
 import static VeganChief.constants.Labels.*;
 
+/**
+ * Service for interacting with objects of the Salad class.
+ */
 public class SaladService {
-
     static final double SCALE_FOR_ROUND = 1000.0;
 
     private static Vegetable[] allVeg = new Vegetable[]{

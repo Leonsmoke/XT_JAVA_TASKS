@@ -1,7 +1,6 @@
 package VeganChief.models;
 
 public class Salad {
-
     private Vegetable[] composition;
     private double fats;
     private double protein;

@@ -1,5 +1,9 @@
 package VeganChief.constants;
 
+/**
+ * An interface that contains all the text of the application.
+ * In this way, it is convenient to edit the text and create localization.
+ */
 public interface Labels {
     static final String GREETINGS = "Welcome to the Vegan Chief App!";
 
