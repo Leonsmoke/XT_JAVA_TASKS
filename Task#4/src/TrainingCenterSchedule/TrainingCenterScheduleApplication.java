@@ -7,7 +7,7 @@ import TrainingCenterSchedule.services.StudentStorageService;
 
 public class TrainingCenterScheduleApplication {
     private static String IVANOV_START_DATE = "27/08/2019 20:00";
-    private static String PETROV_START_DATE = "31/08/2019 12:00";
+    private static String PETROV_START_DATE = "31/08/2019 13:00";
 
     private StudentStorageService studentStorage = new StudentStorageService();
 
