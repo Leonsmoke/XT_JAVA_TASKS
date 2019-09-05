@@ -12,7 +12,6 @@ import static VeganChief.constants.Labels.*;
  * Service for interacting with objects of the Salad class.
  */
 public class SaladService {
-    static final double SCALE_FOR_ROUND = 1000.0;
 
     private static Vegetable[] allVeg = new Vegetable[]{
             new Potato(100),
@@ -156,16 +155,16 @@ public class SaladService {
                 caloric+=weight*product.getCaloric();
             }
         }
-        System.out.println("Total energy value of the salad:" +
-                "\nFats: " + (Math.round(fats*SCALE_FOR_ROUND)/SCALE_FOR_ROUND) +
-                "\nProtein: " + (Math.round(protein*SCALE_FOR_ROUND)/SCALE_FOR_ROUND) +
-                "\nCarbs: " + (Math.round(carbs*SCALE_FOR_ROUND)/SCALE_FOR_ROUND) +
-                "\nCaloric: " + (Math.round(caloric*SCALE_FOR_ROUND)/SCALE_FOR_ROUND));
+        System.out.format("Total energy value of the salad:\nFats: %.3f\nProtein: %.3f\nCarbs: %.3f\nCaloric: %.3f\n",
+                fats,
+                protein,
+                carbs,
+                caloric);
     }
 
     private void printAllVeg(){
         for(int index=0;index<allVeg.length;index++){
-            System.out.println((index+1)+". "+allVeg[index].toString());
+            System.out.format("%d. %s\n",(index+1),allVeg[index].toString());
         }
     }
 
@@ -175,7 +174,7 @@ public class SaladService {
 
         } else {
             for (int index=0; index<composition.length;index++){
-                System.out.println(index+":" +composition[index].getVegetableName() + " ("+composition[index].getWeight()+")");
+                System.out.format("%d: %s (%d)\n",index,composition[index].getVegetableName(),composition[index].getWeight());
             }
         }
     }
