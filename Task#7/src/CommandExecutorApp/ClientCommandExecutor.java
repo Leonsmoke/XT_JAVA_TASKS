@@ -7,6 +7,13 @@ public class ClientCommandExecutor {
 
     public static void main(String[] args) {
         ClientCommandExecutor app = new ClientCommandExecutor();
+        app.runFirstTest();
+    }
+
+    /**
+     * Method that executes test commands with specified test data
+     */
+    public void runFirstTest(){
         /*
          * Create an executor to execute commands
          */
@@ -26,7 +33,7 @@ public class ClientCommandExecutor {
                 executor.executeCommand(doubleRandom),executor.executeCommand(intRandom)};
         Command printer = new PrintNumberCommand(numbers);
         executor.executeCommand(printer);
-        numbers[2]= executor.executeCommand(new TripleNumberCommand(numbers[2]));
+        numbers[3]= executor.executeCommand(new TripleNumberCommand(numbers[3]));
         printer = new PrintNumberCommand(numbers);
         executor.executeCommand(printer);
     }
