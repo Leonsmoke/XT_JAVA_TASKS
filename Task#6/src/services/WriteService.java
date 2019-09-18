@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class WriteService {
 
+    public static final String PATHNAME = "out.txt";
     public static Scanner scanner = new Scanner(System.in);
 
     public static String getLine(){
@@ -33,7 +34,7 @@ public class WriteService {
     }
 
     public static void write(Collection<String> collection, String path){
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("out.txt")))){
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File(PATHNAME)))){
             for (String line: collection
             ) {
                 bufferedWriter.write(line+"\n");
