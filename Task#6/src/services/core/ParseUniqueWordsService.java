@@ -2,7 +2,7 @@ package services.core;
 
 import services.PrintService;
 import services.WriteService;
-import services.interfaces.CollectionServiceInterface;
+import services.interfaces.ParseUniqueWordsInterface;
 
 import java.io.*;
 import java.util.Collection;
@@ -11,13 +11,20 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ParseUniqueWordsService implements CollectionServiceInterface {
+/**
+ * Task#5
+ */
+public class ParseUniqueWordsService implements ParseUniqueWordsInterface {
     private Set<String> wordSet = new HashSet<>();
 
     @Override
     public void start() {
         String textFromFile = load();
         parseWord(textFromFile);
+
+        /*
+         * use PrintService for print result
+         */
         PrintService.printCollection(wordSet);
     }
 
@@ -26,10 +33,14 @@ public class ParseUniqueWordsService implements CollectionServiceInterface {
         return wordSet;
     }
 
-    private String load(){
+    public String load(){
         System.out.println("Enter path to the file with words");
         String pathIn= WriteService.getLine();
-        try(FileInputStream inFile = new FileInputStream(pathIn);){
+        return readAllText(pathIn);
+    }
+
+    private String readAllText(String path){
+        try(FileInputStream inFile = new FileInputStream(path)){
             byte[] str = new byte[inFile.available()];
             inFile.read(str);
             System.out.println("File was read successful");

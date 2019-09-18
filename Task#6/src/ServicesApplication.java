@@ -1,13 +1,12 @@
-import services.*;
+import services.WriteService;
 import services.core.*;
 import services.interfaces.CollectionServiceInterface;
 
-public class Main {
-
+public class ServicesApplication {
     CollectionServiceInterface service;
 
     public static void main(String[] args) {
-        Main app = new Main();
+        ServicesApplication app = new ServicesApplication();
         app.run();
     }
 
@@ -41,8 +40,8 @@ public class Main {
             case 5:
                 service = new ParseUniqueWordsService();
                 break;
-                default:
-                    System.exit(0);
+            default:
+                System.exit(0);
         }
     }
 }

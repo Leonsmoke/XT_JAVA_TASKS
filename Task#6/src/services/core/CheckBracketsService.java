@@ -1,13 +1,16 @@
 package services.core;
 
 import services.WriteService;
-import services.interfaces.CollectionServiceInterface;
+import services.interfaces.CheckBracketInterface;
 
 import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.Deque;
 
-public class CheckBracketsService implements CollectionServiceInterface {
+/**
+ * Task#4
+ */
+public class CheckBracketsService implements CheckBracketInterface {
     Deque<Character> bracketStack = new ArrayDeque<>();
     @Override
     public void start() {
@@ -16,7 +19,6 @@ public class CheckBracketsService implements CollectionServiceInterface {
         } else {
             System.out.println("The line is incorrect!");
         }
-        
     }
 
     @Override
@@ -24,7 +26,7 @@ public class CheckBracketsService implements CollectionServiceInterface {
         return null;
     }
 
-    private boolean checkStack(){
+    public boolean checkStack(){
         System.out.println("Enter line with brackets:");
         String line = WriteService.getLine();
         boolean atLeastOneBracketFind = false;       // A variable that becomes true when at least one bracket is found

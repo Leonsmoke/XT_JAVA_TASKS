@@ -2,6 +2,7 @@ package services.core;
 
 import services.PrintService;
 import services.WriteService;
+import services.interfaces.CheckDirectoryInterface;
 import services.interfaces.CollectionServiceInterface;
 
 import java.io.File;
@@ -9,7 +10,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class CheckDirectoryService implements CollectionServiceInterface {
+/**
+ * Task#2
+ */
+public class CheckDirectoryService implements CheckDirectoryInterface {
     private List<File> files = new ArrayList<>();
 
     @Override
@@ -17,6 +21,10 @@ public class CheckDirectoryService implements CollectionServiceInterface {
         System.out.println("Enter the path to directory");
         File file = new File(WriteService.getLine());
         readFiles(file);
+
+        /*
+         * use PrintService for print result
+         */
         PrintService.printCollection(getCollection());
     }
 
